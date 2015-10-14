@@ -1,0 +1,115 @@
+/*  
+Framework Dominicano 
+
+-Dany Orlando Santos Morel -
+- - 
+- -
+- -
+ */
+
+
+* 	{	margin: 0 auto;	text-align: center;	}
+
+.p-0 {	padding: 0px;	}
+
+p,h1,h2,h3 {	padding: 16px;	}
+
+.contenedor-p {	position: absolute;	width: 100%;	height: 100%;		}
+
+.clearfix {	  clear: both;	position: relative;	float: left;	width: 100%;	}
+
+.col-m0-12,.col-m0-11,.col-m0-10,.col-m0-9,.col-m0-8,.col-m0-7,.col-m0-6,.col-m0-5,.col-m0-4,.col-m0-3,.col-m0-2,.col-m0-1 { 
+
+  position: relative;
+  min-height: 1px;
+  border: 1px solid #444;
+  }
+.columnas {	width: 100%;	position: relative;	margin: 0 auto;	}
+ 
+ .col-m0-1, .col-m0-2, .col-m0-3, .col-m0-4, .col-m0-5, .col-m0-6, .col-m0-7, .col-m0-8, .col-m0-9, .col-m0-10, .col-m0-11, .col-m0-12 {
+    float: left;
+  }
+  .col-m0-12 {
+    width: 100%;
+  }
+  .col-m0-11 {
+    width: 91.66666667%;
+  }
+  .col-m0-10 {
+    width: 83.33333333%;
+  }
+  .col-m0-9 {
+    width: 75%;
+  }
+  .col-m0-8 {
+    width: 66.66666667%;
+  }
+  .col-m0-7 {
+    width: 58.33333333%;
+  }
+  .col-m0-6 {
+    width: 50%;
+  }
+  .col-m0-5 {
+    width: 41.66666667%;
+  }
+  .col-m0-4 {
+    width: 33.33333333%;
+  }
+  .col-m0-3 {
+    width: 25%;
+  }
+  .col-m0-2 {
+    width: 16.66666667%;
+  }
+  .col-m0-1 {
+    width: 8.33333333%;
+  }
+
+ .col-m1-1, .col-m1-2, .col-m1-3, .col-m1-4, .col-m1-5, .col-m1-6, .col-m1-7, .col-m1-8, .col-m1-9, .col-m1-10, .col-m1-11, .col-m1-12 {
+    float: left;
+	margin: 0.5%;
+  }
+
+ .col-m1-1, .col-m1-2, .col-m1-3, .col-m1-4, .col-m1-5, .col-m1-6, .col-m1-7, .col-m1-8, .col-m1-9, .col-m1-10, .col-m1-11, .col-m1-12 {
+    float: left;
+	margin-left: 5px;
+	border-right: 1px solid #444; 
+  }
+
+  .col-m1-12 {
+    width: 99%;
+  }
+  .col-m1-11 {
+    width: 90.66666667%;
+  }
+  .col-m1-10 {
+    width: 82.33333333%;
+  }
+  .col-m1-9 {
+    width: 74%;
+  }
+  .col-m1-8 {
+    width: 65.66666667%;
+  }
+  .col-m1-7 {
+    width: 57.33333333%;
+  }
+  .col-m1-6 {
+    width: 49%;
+  }
+  .col-m1-5 {
+    width: 40.66666667%;
+  }
+  .col-m1-4 {
+    width: 32.33333333%;
+  }
+  .col-m1-3 {
+    width: 24%;
+  }
+  .col-m1-2 {
+    width: 15.66666667%;
+  }
+  .col-m1-1 {
+    width: 7.33333333%;
+  }
