@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js</title>
+<script type="text/javascript">
+
+function _c(clase) {	return document.querySelector(''+clase);	}
+
+// seleciona por el <tag> <html>
+function _N(clase) {	return document.getElementsByTagName(''+clase);	}
+
+// seleciona por el <tag> <html> y por una clase o id 
+function _All(clase) { 	return document.queryAllSelector(''+clase);	}
+
+
+var _cc = function (clase,contexto)  {  return new _cc.inic(clase,contexto); 	 }
+/*var _c = function(clase) {	return document.querySelector('.'+clase);};*/
+var version = "0.1.0";
+ 
+inic  =  _cc.inic = function (clase,contexto,indic) {
+// Metodo selector del objeto
+this.clase = clase,
+this.contexto = contexto,
+this.indic = indic,
+
+selectores = function(clase){
+
+if (document.querySelector(clase)!= null){
+
+selector = document.querySelector(clase);
+
+	} else {
+ 
+selector = document.querySelectorAll(clase)[indic];
+ 
+	}
+},
+ 
+constructor = function(clase,contexto){
+selectores(clase);
+
+},
+constructor(this.clase,this.contexto);
+}
+
+
+
+
+// Metodo transformacion, para transformar el objeto
+inic.prototype.transfomar = function (detalles,clase){
+//selectores(clase);
+selector.style.webkitTransform = ''+detalles;
+selector.style.MozTransform = ''+detalles;
+selector.style.msTransform = ''+detalles;
+selector.style.OTransform = ''+detalles;
+selector.style.transform = ''+detalles;
+	}
+
+// Metodo para la transicion
+inic.prototype.transicion = function (detalles,clase){
+//selectores(clase);
+selector.style.webkitTransition = ''+detalles;
+selector.style.MozTransition = ''+detalles;
+selector.style.msTransition = ''+detalles;
+selector.style.OTransition = ''+detalles;
+selector.style.transition = ''+detalles;
+	}
+
+inic.prototype.tipodetiempo = function (detalles,clase){
+//selectores(clase);
+selector.style.webkitAnimationTimingFunction = ''+detalles;
+selector.style.MozAnimationTimingFunction = ''+detalles;
+selector.style.msAnimationTimingFunction = ''+detalles;
+selector.style.AnimationTimingFunction = ''+detalles;
+	}
+
+inic.prototype.css = function(css,valor) {
+
+selector.style[css] = [valor] ;
+
+};
+
+
+ function animacion(options,tiempo){
+ this.tiempo = options.tiempo || 1000;
+this.clase = options.clase || "",
+this.tiempo1 = options._a0 || "",
+this.tiempo2 = options._a50 || "",
+this.tiempo3 = options._a75 || "",
+this.tiempo4 = options._a100 || "";
+//this.parametros = options.parametros || "",
+
+animaciones = function(clase,tiempo) {
+
+var tp1 = setTimeout(function(){
+
+var tr = this.tiempo1.split(";");
+
+for (var i =0; i < tr.length-1; i++) { var t = tr[i].split(":");  _c('.'+clase).style[t[0]] = [t[1]]; }  },tiempo/4);
+
+//--------------
+
+var tp2 = setTimeout(function(){
+var tr = this.tiempo2.split(";");
+
+for (var i =0; i < tr.length-1; i++) { var t = tr[i].split(":");  _c('.'+clase).style[t[0]] = [t[1]];
+
+} 
+
+
+},tiempo/3);
+//-------------
+var tp3 = setTimeout(function(){
+
+var tr = this.tiempo3.split(";");
+
+for (var i =0; i < tr.length-1; i++) { var t = tr[i].split(":");  _c('.'+clase).style[t[0]] = [t[1]]; } 
+
+},tiempo/2);
+
+//---------------
+
+var tp4 = setTimeout(function(){	
+var tr = this.tiempo4.split(";");
+
+for (var i =0; i < tr.length-1; i++) { var t = tr[i].split(":");  _c('.'+clase).style[t[0]] = [t[1]]; } 
+ clearTimeout(tp1);	 clearTimeout(tp2);	 clearTimeout(tp3);	 clearTimeout(tp4);
+
+},tiempo);
+//------------ 
+
+	},
+constructor = function(){
+
+	animaciones(this.clase,this.tiempo);
+
+}
+constructor();
+}         
+
+
+function ejemplo() {
+
+_cc(".cubo").transicion("all 0.5s");
+
+// animacion con una funcion
+animacion({
+tiempo:"2000",
+clase:"cubo",
+_a0:"left:0%;background-color:#444;",
+_a50:"top:100px;background-color:#2ECCFA;",
+_a75:"top:50%;",
+_a100:"left:50%;background-color:#01DFD7;"
+});
+
+// animacion con timeout
+  _cc(".cubo").css("backgroundColor","#444");
+  _cc(".cubo").css("left","0%");          
+  _cc(".cubo").css("margin-left", "0em");          
+setTimeout(function(){
+  _cc(".cubo").css("left", "50%");          
+  _cc(".cubo").transfomar("rotate(360deg)");
+
+},500);
+setTimeout(function(){
+  _cc(".cubo").css("margin-left", "-2.5em");          
+  _cc(".cubo").css("left", "100%");      
+  _cc(".cubo").transfomar("rotate(0deg)");
+},1000);
+
+setTimeout(function(){
+  _cc(".cubo").css("left", "50%");          
+  _cc(".cubo").transfomar("rotate(360deg)");
+},1500); 
+
+}	
+
+
+
+
+
+window.onload = function(){
+ejemplo();
+
+};
+
+
+
+</script>
+<style type="text/css">
+	.cubo {	position: absolute;	width: 5em;	height: 5em;	top: 50%;	left: 50%;	margin-left: -2.5em;	margin-top: -2.5em;	background-color: #e45;	}
+
+</style>
+</head>
+<body>
+
+<div class="cubo" onclick="ejemplo()">
+	
+</div>
+	
+</body>
+</html>
+
