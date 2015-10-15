@@ -84,61 +84,58 @@ selector.style[css] = [valor] ;
 
  function animacion(options,tiempo){
  this.tiempo = options.tiempo || 1000;
-this.clase = options.clase || "",
-this.tiempo1 = options._a0 || "",
-this.tiempo2 = options._a50 || "",
-this.tiempo3 = options._a75 || "",
-this.tiempo4 = options._a100 || "";
+this.clase = options.clase || options.id || "",
+this.tiempo1 = options._a0 || 500,
+this.tiempo2 = options._a50 || 1000,
+this.tiempo3 = options._a75 || 1500,
+this.tiempo4 = options._a100 || 2000,
+this.transicion1 = options.transicion || 500;
+
 //this.parametros = options.parametros || "",
 
 animaciones = function(clase,tiempo) {
-
+var dvt = tiempo / 500; 
 var tp1 = setTimeout(function(){
-
 var tr = this.tiempo1.split(";");
+var trs = parseInt(this.transicion1) / 1000;
 
-for (var i =0; i < tr.length-1; i++) { var t = tr[i].split(":");  _c('.'+clase).style[t[0]] = [t[1]]; }  },tiempo/4);
 
+for (var i =0; i < tr.length-1; i++) { var t = tr[i].split(":");  _c(clase).style[t[0]] = [t[1]]; }  },tiempo/dvt);
 //--------------
-
 var tp2 = setTimeout(function(){
 var tr = this.tiempo2.split(";");
-
-for (var i =0; i < tr.length-1; i++) { var t = tr[i].split(":");  _c('.'+clase).style[t[0]] = [t[1]];
-
+for (var i =0; i < tr.length-1; i++) { var t = tr[i].split(":");  _c(clase).style[t[0]] = [t[1]];
 } 
-
-
-},tiempo/3);
+},(tiempo/dvt)+trs);
 //-------------
 var tp3 = setTimeout(function(){
-
 var tr = this.tiempo3.split(";");
-
-for (var i =0; i < tr.length-1; i++) { var t = tr[i].split(":");  _c('.'+clase).style[t[0]] = [t[1]]; } 
-
-},tiempo/2);
-
+for (var i =0; i < tr.length-1; i++) { var t = tr[i].split(":");  _c(clase).style[t[0]] = [t[1]]; } 
+},(tiempo/dvt)+trs);
 //---------------
-
 var tp4 = setTimeout(function(){	
 var tr = this.tiempo4.split(";");
-
-for (var i =0; i < tr.length-1; i++) { var t = tr[i].split(":");  _c('.'+clase).style[t[0]] = [t[1]]; } 
+for (var i =0; i < tr.length-1; i++) { var t = tr[i].split(":");  _c(clase).style[t[0]] = [t[1]]; } 
  clearTimeout(tp1);	 clearTimeout(tp2);	 clearTimeout(tp3);	 clearTimeout(tp4);
+},(tiempo/dvt)+trs);
 
-},tiempo);
 //------------ 
 
 	},
+// Metodo para la transicion
+transicion = function (detallesc,clase){
+var detalles1 = parseInt(detallesc) / 1000;
+alert(detalles1);  
+
+_cc(clase).transicion("all "+detalles1+"s");
+
+ 	},
 constructor = function(){
-
 	animaciones(this.clase,this.tiempo);
-
+transicion(this.transicion1,this.clase)
 }
 constructor();
-}         
-
+}       
 
 function ejemplo() {
 
