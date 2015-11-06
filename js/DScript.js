@@ -219,6 +219,18 @@ _ajaxs({
 	fin:fin
 
 });
+inic.prototype.evento = function(opciones) {
+var elemento =  opciones.elemt || null
+,	evento   = opciones.eventos || null
+,	funcion  = opciones.funcion || null;
+
+evento({
+elemento:elemt,
+eventos:evento,
+funcion:funcion 
+});
+
+}
 
 }
 /* Funciones Localstorage  */
@@ -370,11 +382,71 @@ G_Maps.set = function(opciones) {
 	}
 }
 
-Leer Json 
+//Leer Json 
 var _json = {
 leer : function(data) {
 return JSON.parse(data); 
 }
 
 }
+
+function evento(opciones){
+var elemento =  opciones.elemt || null
+,	evnt   = opciones.evento || null
+,	funcion  = opciones.funcion || null;
+	if (element.addEventListener) {	
+
+		element.addEventListener(evnt,funcion,false);
+
+		}else{
+		
+		element.attachEvent("on"+evento,funcion,false);
+	}
+} 
+
+function onDOMComplete(w, f) {
+	var d = w.document, done = false;
+	wait();
+
+	if ((/WebKit|KHTML|MSIE/i).test(navigator.userAgent)) {
+		poll();
+	}
+
+	function load(e) {
+		if (!done) {
+			done = true; stop(); f(e);
+		}
+	}
+
+	function has(p) { return typeof d[p] != 'undefined'; }
+
+	function poll() {
+		if (d.body !== null && d.getElementsByTagName) {
+			// please see http://javascript.nwbox.com/IEContentLoaded/ for the IE improvement part of DOMComplete
+			if (has('fileSize')) { try { d.documentElement.doScroll('left'); load('documentready'); } catch (e) { } }
+			if (has('readyState') && (/loaded|complete/).test(d.readyState)) { load('readyState'); }
+		}
+		if (!done) { setTimeout(poll, 10); }
+	}
+
+	function stop() {
+		if (typeof d.removeEventListener == 'function') {
+			d.removeEventListener('DOMContentLoaded', load, false);
+		}
+	}
+
+	function wait() {
+		if (typeof d.addEventListener == 'function') {
+			d.addEventListener('DOMContentLoaded', load, false);
+		}
+		var oldonload = w.onload;
+		w.onload = function (e) {
+			if (typeof oldonload == 'function') {
+				oldonload();
+			}
+			load(e || this.event);
+		};
+	}
+}
+
 
