@@ -390,7 +390,7 @@ return JSON.parse(data);
 
 }
 
-function evento(opciones){
+function _evento(opciones){
 var elemento =  opciones.elemt || null
 ,	evnt   = opciones.evento || null
 ,	funcion  = opciones.funcion || null;
