@@ -141,7 +141,7 @@ constructor(this.clase,this.contexto);
 
 
 // Metodo transformacion, para transformar el objeto
-inic.prototype.transfomar = function (detalles,clase){
+inic.prototype.transformar = function (detalles,clase){
 //selectores(clase);
 (typeof(selector.style.webkitTransform) != "undefined") ? selector.style.webkitTransform = ''+detalles : selector.style["webkit-transform"] = [''+detalles];
 (typeof(selector.style.MozTransform) != "undefined") ? selector.style.MozTransform = ''+detalles : selector.style["moz-Transform"] = [''+detalles];
