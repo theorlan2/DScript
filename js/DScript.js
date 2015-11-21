@@ -170,9 +170,12 @@ inic.prototype.tipodetiempo = function (detalles,clase){
 
 // aplicar estilos css al elemento, Eje: _cc('elemento').css('background-color','#eee');
 inic.prototype.css = function(css,valor) {
- 
+if(valor == ""){
+var tr = css.split(";");
+for (var i =0; i < tr.length-1; i++) { var t = tr[i].split(":");  selector.style[t[0]] = [t[1]]; } 
+}else{
 selector.style[css] = [valor] ;
-
+}
 };
 // escribir en el elmento o InnerHTML eje: _cc('elemento_a_escribir').escribir('ejemplo');
 inic.prototype.escribir = function(valor) {
