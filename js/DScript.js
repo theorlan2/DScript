@@ -168,18 +168,20 @@ inic.prototype.tipodetiempo = function (detalles,clase){
 (typeof(selector.style.AnimationTimingFunction) != "undefined") ?  selector.style.AnimationTimingFunction = ''+detalles : selector.style["AnimationTimingFunction"] = [''+detalles];
 	}
 
+// aplicar estilos css al elemento, Eje: _cc('elemento').css('background-color','#eee');
 inic.prototype.css = function(css,valor) {
  
 selector.style[css] = [valor] ;
 
 };
-
+// escribir en el elmento o InnerHTML eje: _cc('elemento_a_escribir').escribir('ejemplo');
 inic.prototype.escribir = function(valor) {
-alert(selector);
+
 selector.innerHTML = valor;
 
 }
 
+// iniciar el api de Google Maps, eje: _cc('contenedor_del_mapa').G_Maps();
 inic.prototype.G_Maps = function(opcion) {
 var lat = opcion.lat || 18.4643133
 ,lng = opcion.lng || -69.8771667
@@ -205,7 +207,7 @@ dir2: dir2,
 rotar: rotar,
  })
 }
-
+// ajax retornado en el elemento selecionado eje: _cc('mostrar_resultado')._ajax();
 inic.prototype._ajaxs = function(opciones) {
 var url = opciones.url || null;
 var file = opciones.file || null;
@@ -219,6 +221,7 @@ _ajaxs({
 	fin:fin
 
 });
+// agregar eventos al elemento _cc('agregar_evento').evento();
 inic.prototype.evento = function(opciones) {
 var elemento =  opciones.elemt || null
 ,	evento   = opciones.eventos || null
@@ -256,7 +259,7 @@ eliminar: function (key){
 
 	}
 }
-
+//  Objeto ajax 
 function  _ajaxs(opciones) {
 this.url = opciones.url || "";
 this.file = opciones.file || null;
@@ -390,6 +393,7 @@ return JSON.parse(data);
 
 }
 
+// agregar eventos a un elemento 
 function _evento(opciones){
 var elemento =  opciones.elemt || null
 ,	evnt   = opciones.evento || null
@@ -404,6 +408,7 @@ var elemento =  opciones.elemt || null
 	}
 } 
 
+// funcion que inicia al cargar el Dom
 function onDOMComplete(w, f) {
 	var d = w.document, done = false;
 	wait();
@@ -449,6 +454,7 @@ function onDOMComplete(w, f) {
 	}
 }
 
+// poner elemento  o el body en full Screen
 function iniciarFullScreen(element) {
 	if(element.requestFullScreen) {
 		element.requestFullScreen();
@@ -459,6 +465,7 @@ function iniciarFullScreen(element) {
 	}
 }
 
+// Obtener el ancho y alto del navegador 
 function w_h_size(){
 
 var winW = 630, winH = 460;
@@ -491,7 +498,7 @@ return winW,winH;
 	
 }
 
-
+// Obtener la posicion X absoluta del objeto
   function findPosX(obj)
   {
     var curleft = 0;
@@ -507,7 +514,8 @@ return winW,winH;
         curleft += obj.x;
     return curleft;
   }
-
+  
+// Obtener la posicion Y absoluta del objeto
   function findPosY(obj)
   {
     var curtop = 0;
