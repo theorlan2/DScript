@@ -54,7 +54,7 @@ if(m_q({q:"maxw",px:"480px" })) {
 
 
 
-
+// efecto Media Querys , Beta, Eje: if(m_q({types:0,q:"maxw",px:"1024px" })) { // si es mayor de 1024px  }
 function m_q(options) {
  options = options || {};
 var typequery = options.types || ""; 
