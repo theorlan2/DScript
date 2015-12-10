@@ -16,20 +16,13 @@ function _All(clase) { 	return document.queryAllSelector(''+clase);	}
 
 /*
 ----- funcion unica para todas las anteriores (Opcional) ---
-
 function _(clase) {
 if (document.querySelector('.'+clase)!= null){
-
 return document.querySelector('.'+clase);
-
 	} else if(document.querySelectorAll(''+clase)[0]!=null) {
-
 return document.querySelectorAll(''+clase)[0];
-
 	} else {
-
 return document.querySelectorAll('#'+clase);
-
 	}
 }
 */
@@ -42,13 +35,10 @@ return document.querySelectorAll('#'+clase);
 if(m_q({q:"maxw",px:"480px" })) {
  
 }else if(m_q({q:"maxw",px:"640px" })) {
-
 }else if(m_q({q:"maxw",px:"768px" })) {
-
 }else if(m_q({types:0,q:"maxw",px:"1024px" })) {
 //	alert("1024px");
 }
-
 */
 
 
@@ -380,13 +370,20 @@ if (direcciones == true ) {
 
 }
  
-G_Maps.set = function(opciones) {
- var center = opciones.centro || null 
-	if (center != null) {
-	 map.setCenter({lat: -34, lng: 151});
-		}
+G_Maps.set = function(opciones_set) {
+ var latset = opciones_set.latset || 18.4643133
+,lngset = opciones_set.lngset || -69.8771667 ;
+
+		map.setCenter({lat:latset,lng:lngset});
+
 	}
+
+G_Maps.retornar = function() {
+ return map;
 }
+
+}
+
 
 //Leer Json 
 var _json = {
@@ -401,13 +398,13 @@ function _evento(opciones){
 var elemento =  opciones.elemt || null
 ,	evnt   = opciones.evento || null
 ,	funcion  = opciones.funcion || null;
-	if (element.addEventListener) {	
+	if (elemento.addEventListener) {	
 
-		element.addEventListener(evnt,funcion,false);
+		elemento.addEventListener(evnt,funcion,false);
 
 		}else{
 		
-		element.attachEvent("on"+evento,funcion,false);
+		elemento.attachEvent("on"+evento,funcion,false);
 	}
 } 
 
