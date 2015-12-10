@@ -372,9 +372,12 @@ if (direcciones == true ) {
  
 G_Maps.set = function(opciones_set) {
  var latset = opciones_set.latset || 18.4643133
-,lngset = opciones_set.lngset || -69.8771667 ;
+,lngset = opciones_set.lngset || -69.8771667
+,zoom_set = opciones_set.z || "" ;
 
 		map.setCenter({lat:latset,lng:lngset});
+
+if (zoom_set != "") {  map.setZoom(zoom_set);};
 
 	}
 
