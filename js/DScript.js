@@ -558,4 +558,21 @@ var step = 25/duracion;
      (function trs_elemt() { var t = getStyle(elemento,propiedad) - step;   t < resultado ? succes() :  setTimeout(trs_elemt, 25); elemento.style[propiedad] = t; })();
 }
 
+//https://plainjs.com/javascript/effects/animate-an-element-property-44/ 
+
+//  Ocultar elemento
+function ocultarE(el, duracion) {
+    var s = el.style, step = 25/(duracion || 300);
+    s.opacity = s.opacity || 1;
+    (function fade() { (s.opacity -= step) < 0 ? s.display = "none" : setTimeout(fade, 25); })();
+}
+
+//  Motrar elemento
+function mostrarE(el, duracion, display) {
+    var s = el.style, step = 25/(duracion || 300);
+    s.opacity = s.opacity || 0;
+    s.display = display || "block";
+    (function out() { (s.opacity = parseFloat(s.opacity)+step) > 1 ? s.opacity = 1 : setTimeout(fade, 25); })();
+}
+
 
