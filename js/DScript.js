@@ -536,3 +536,26 @@ return winW,winH;
     return curtop;
   }
 
+// Obtener valor de un Estilo: http://www.quirksmode.org/dom/getstyles.html
+function getStyle(el,styleProp)
+{
+	var x = el;
+	if (x.currentStyle)
+		var y = x.currentStyle[styleProp];
+	else if (window.getComputedStyle)
+		var y = document.defaultView.getComputedStyle(x,null).getPropertyValue(styleProp);
+	return y;
+}
+// Efecto de Transicion (Lineal) a un elemento \ solo aplica a efectos numericos eje: width,height,margin
+function transicion_js(opciones_trs) {
+var  elemento = opciones_trs.elemento,
+ propiedad = opciones_trs.propiedad,
+ duracion = opciones_trs.duracion || 300,
+ resultado = opciones_trs.resultad || 0,
+ succes = opciones_trs.fin || function(){ console.log('fin transicion'); } ;
+var rest = getStyle(elemento,propiedad); 
+var step = 25/duracion;
+     (function trs_elemt() { var t = getStyle(elemento,propiedad) - step;   t < resultado ? succes() :  setTimeout(trs_elemt, 25); elemento.style[propiedad] = t; })();
+}
+
+
