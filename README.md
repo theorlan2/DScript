@@ -3,7 +3,7 @@ Repositorio sobre Framework Dominicano
 
 La libreria esta dirigida a funciones y estilos de FROND - END.
 
-<h4> Para selecionar un Nodo del DOM:<h4>
+<h4> Para selecionar un Nodo del DOM:</h4>
 
 _c('.clase');   _c('#id');
 
