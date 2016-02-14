@@ -1,29 +1,36 @@
-# Dominican-Frameworks
-Repositorio sobre Framework Dominicano
-
-La libreria esta dirigida a funciones y estilos de FROND - END.
+# Libreria Basica DScript
+<p>Repositorio sobre Framework Dominicano</p>
+<p>La libreria esta dirigida a funciones y estilos de FROND - END.</p>
 
 <h4> Para selecionar un Nodo del DOM:</h4>
 
-_c('.clase');   _c('#id');
-
-
-<b>Para selecionar por el "<tag> <html>" </b>
 <code>
- _N('clase')[indice]; </code>
+_c('.clase');   _c('#id');
+</code>
 
+
+<p><b>Para selecionar por el "<tag> <html>" </b></p>
+<code> _N('clase')[indice]; </code>
+
+<br>
 <b>Para selecionar por el "<tag> <html>" y por una clase o id (Utilizando el indice [])</b>
+<code>
  _All('clase')[indice];
-
+</code>
+<br>
+<code>
  _All('.clase > h1')[indice]; // seleciona un nodo hijo
+</code>
 
+<br>
 
-Selector Especial para aplicar funciones al Nodo
-
+<p>Selector Especial para aplicar funciones al Nodo</p>
+<code>
 _cc('');
+</code>
 
-
-<b>Media - querys </b>
+<br>
+<p><b>Media - querys </b></p>
 
 ejemplo 
 
