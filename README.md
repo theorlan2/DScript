@@ -31,29 +31,34 @@ _cc('');
 
 <br>
 <p><b>Media - querys </b></p>
+<p><b>Ejemplo:</b></p>
+<p>Css:</p>
 
-ejemplo 
-
-Css:
+<code>
 @media screen and (max-width:1024px)  {  // si es mayor de 1024px  }
+</code>
+<p>Js (DScript):</p>
 
-Js (DScript):
+<code>
 if(m_q({types:0,q:"maxw",px:"1024px" })) { // si es mayor de 1024px  }
+</code>
+<p>La funcion se ejecuta 1 vez.</p>
+<p>Si quieres ejecuatar cuando el navegador cambia de taman;o, coloca dentro de una funcion que se ejecute durante el evento Resize. </p>
 
-La funcion se ejecuta 1 vez.
-Si quieres ejecuatar cuando el navegador cambia de taman;o, coloca dentro de una funcion que se ejecute durante el evento Resize. 
+<p>Ajax</p>
+<p>La funcion _ajaxs({opciones}); </p> 
 
-Ajax 
-La funcion _ajaxs({opciones}); 
+<code>
+
 _ajaxs({
-url ;
-file;
-classn;
-response;
-fin;
-resq;
+url: "";
+file: "";
+response:"";
+fin:function() {	// ejecutar al finalizar el ajax	};
+resq:"GET"(Por Defecto) or "POST";
 });
 
+</code>
 
 
 
