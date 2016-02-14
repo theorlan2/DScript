@@ -8,10 +8,10 @@ La libreria esta dirigida a funciones y estilos de FROND - END.
 _c('.clase');   _c('#id');
 
 
-Para selecionar por el <tag> <html>
+<b>Para selecionar por el <tag> <html> </b>
  _N('clase')[indice]; 
 
-Para selecionar por el <tag> <html> y por una clase o id (Utilizando el indice [])
+<b>Para selecionar por el <tag> <html> y por una clase o id (Utilizando el indice [])</b>
  _All('clase')[indice];
 
  _All('.clase > h1')[indice]; // seleciona un nodo hijo
@@ -22,7 +22,7 @@ Selector Especial para aplicar funciones al Nodo
 _cc('');
 
 
-Media - querys 
+<b>Media - querys </b>
 
 ejemplo 
 
