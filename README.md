@@ -9,7 +9,8 @@ _c('.clase');   _c('#id');
 
 
 <b>Para selecionar por el "<tag> <html>" </b>
- _N('clase')[indice]; 
+<code>
+ _N('clase')[indice]; </code>
 
 <b>Para selecionar por el "<tag> <html>" y por una clase o id (Utilizando el indice [])</b>
  _All('clase')[indice];
