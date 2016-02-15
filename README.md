@@ -1,5 +1,5 @@
 # Libreria Basica DScript
-<p>Repositorio sobre Framework Dominicano</p>
+<p>Repositorio Framework DScript</p>
 <p>La libreria esta dirigida a funciones y estilos de FROND - END.</p>
 
 <h4> Para selecionar un Nodo del DOM:</h4>
@@ -49,15 +49,15 @@ if(m_q({types:0,q:"maxw",px:"1024px" })) { // si es mayor de 1024px  }
 <p>La funcion _ajaxs({opciones}); </p> 
 
 <code>
-
-_ajaxs({
-url: "";
-file: "";
-response:"";
-fin:function() {	// ejecutar al finalizar el ajax	};
-resq:"GET"(Por Defecto) or "POST";
-});
-
+<br>
+_ajaxs({<br>
+url: "";<br>
+file: "";<br>
+response:"";<br>
+fin:function() {	// ejecutar al finalizar el ajax	};<br>
+resq:"GET"(Por Defecto) or "POST";<br>
+});<br>
+<br>
 </code>
 
 
